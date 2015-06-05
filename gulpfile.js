@@ -12,6 +12,7 @@ var opts = [{'cwd' : 'this-is-root'},
 
 gulp.task('default', function() {
     var streams = [];
+    gutil.log('glob is', files);
     opts.forEach(function(opt) {
         streams.push(gulp.src(files, objectAssign({}, opt))
             .pipe(reduce(function(acc, file) {
